@@ -1,11 +1,18 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
-    --background: #f3f4f6;
+    --background: #f0f2f5;
     --foreground: #111827;
     --brand-orange: #ff5c00;
     --brand-orange-hover: #e04f00;
+  }
+
+  .dark {
+    --background: #0c0e12;
+    --foreground: #f9fafb;
   }
 }
 
@@ -14,10 +21,9 @@ html {
 }
 
 body {
-  background-color: #f0f2f5;
-  color: #111827;
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Custom animations */

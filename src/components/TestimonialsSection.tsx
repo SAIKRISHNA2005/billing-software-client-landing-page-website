@@ -109,16 +109,16 @@ export default function TestimonialsSection() {
   const current = testimonials[currentIdx];
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 px-4 sm:px-6 md:px-8 bg-[#eaecf0] overflow-hidden">
+    <section id="testimonials" className="py-20 md:py-28 px-4 sm:px-6 md:px-8 bg-[#eaecf0] dark:bg-[#0c0e12] overflow-hidden transition-colors">
       <div className="max-w-6xl mx-auto text-center">
         {/* Section Tag */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-neutral-700 text-xs font-semibold mb-3 shadow-xs border border-neutral-200">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-[#161a22] text-neutral-700 dark:text-neutral-300 text-xs font-semibold mb-3 shadow-xs border border-neutral-200 dark:border-neutral-700/80 transition-colors">
           <span className="text-orange-500">✦</span>
           <span>Client Testimonials</span>
         </div>
 
         {/* Headline */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 tracking-tight mb-14 leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white tracking-tight mb-14 leading-tight transition-colors">
           What Our Partners
           <br />
           Say About Us
@@ -129,7 +129,7 @@ export default function TestimonialsSection() {
           {/* Far-Left Dimmed Avatar (-2) */}
           <div
             onClick={() => handleSelect(farLeftIdx)}
-            className="hidden lg:block w-14 h-14 rounded-2xl overflow-hidden opacity-30 hover:opacity-75 transition-all transform hover:scale-105 cursor-pointer border border-neutral-300 flex-shrink-0"
+            className="hidden lg:block w-14 h-14 rounded-2xl overflow-hidden opacity-30 hover:opacity-75 transition-all transform hover:scale-105 cursor-pointer border border-neutral-300 dark:border-neutral-700 flex-shrink-0"
             title={testimonials[farLeftIdx].name}
           >
             <img
@@ -142,7 +142,7 @@ export default function TestimonialsSection() {
           {/* Mid-Left Semi-Dimmed Avatar (-1) */}
           <div
             onClick={() => handleSelect(midLeftIdx)}
-            className="hidden sm:block w-18 h-18 sm:w-20 sm:h-20 md:w-22 md:h-22 rounded-2xl overflow-hidden opacity-50 hover:opacity-85 transition-all transform hover:scale-105 cursor-pointer border border-neutral-300 flex-shrink-0"
+            className="hidden sm:block w-18 h-18 sm:w-20 sm:h-20 md:w-22 md:h-22 rounded-2xl overflow-hidden opacity-50 hover:opacity-85 transition-all transform hover:scale-105 cursor-pointer border border-neutral-300 dark:border-neutral-700 flex-shrink-0"
             title={testimonials[midLeftIdx].name}
           >
             <img
@@ -157,7 +157,7 @@ export default function TestimonialsSection() {
             style={{
               transition: slideState === "enter" ? "none" : "all 300ms cubic-bezier(0.25, 1, 0.5, 1)",
             }}
-            className={`bg-white rounded-[32px] p-6 sm:p-8 md:p-10 border border-neutral-200/90 max-w-2xl w-full text-left flex flex-col sm:flex-row items-center sm:items-start gap-6 transform ${
+            className={`bg-white dark:bg-[#161a22] rounded-[32px] p-6 sm:p-8 md:p-10 border border-neutral-200/90 dark:border-neutral-700/80 shadow-md max-w-2xl w-full text-left flex flex-col sm:flex-row items-center sm:items-start gap-6 transform transition-colors ${
               slideState === "exit"
                 ? direction === "right"
                   ? "-translate-x-6 opacity-0 scale-[0.98]"
@@ -170,7 +170,7 @@ export default function TestimonialsSection() {
             }`}
           >
             {/* Client Photo on Left in Rounded Rectangle */}
-            <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-2xl overflow-hidden flex-shrink-0 border border-neutral-200">
+            <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-2xl overflow-hidden flex-shrink-0 border border-neutral-200 dark:border-neutral-700">
               <img
                 src={current.avatar}
                 alt={current.name}
@@ -182,19 +182,19 @@ export default function TestimonialsSection() {
             <div className="flex-1 flex flex-col justify-between h-full">
               <div>
                 {/* Quotation Mark */}
-                <span className="text-4xl font-serif text-neutral-300 leading-none block select-none">“</span>
-                <p className="text-xs sm:text-sm md:text-[15px] text-neutral-700 font-normal leading-relaxed -mt-2 mb-6">
+                <span className="text-4xl font-serif text-neutral-300 dark:text-neutral-700 leading-none block select-none">“</span>
+                <p className="text-xs sm:text-sm md:text-[15px] text-neutral-700 dark:text-neutral-200 font-normal leading-relaxed -mt-2 mb-6">
                   {current.quote}
                 </p>
               </div>
 
               {/* Author and 5 Golden Stars */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-neutral-100">
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-neutral-100 dark:border-neutral-800">
                 <div>
-                  <div className="text-sm sm:text-base font-bold text-neutral-900">
+                  <div className="text-sm sm:text-base font-bold text-neutral-900 dark:text-white">
                     — {current.name}
                   </div>
-                  <div className="text-[11px] text-neutral-500 font-medium">
+                  <div className="text-[11px] text-neutral-500 dark:text-neutral-400 font-medium">
                     {current.role}
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export default function TestimonialsSection() {
           {/* Mid-Right Semi-Dimmed Avatar (+1) */}
           <div
             onClick={() => handleSelect(midRightIdx)}
-            className="hidden sm:block w-18 h-18 sm:w-20 sm:h-20 md:w-22 md:h-22 rounded-2xl overflow-hidden opacity-50 hover:opacity-85 transition-all transform hover:scale-105 cursor-pointer border border-neutral-300 flex-shrink-0"
+            className="hidden sm:block w-18 h-18 sm:w-20 sm:h-20 md:w-22 md:h-22 rounded-2xl overflow-hidden opacity-50 hover:opacity-85 transition-all transform hover:scale-105 cursor-pointer border border-neutral-300 dark:border-neutral-700 flex-shrink-0"
             title={testimonials[midRightIdx].name}
           >
             <img
@@ -225,7 +225,7 @@ export default function TestimonialsSection() {
           {/* Far-Right Dimmed Avatar (+2) */}
           <div
             onClick={() => handleSelect(farRightIdx)}
-            className="hidden lg:block w-14 h-14 rounded-2xl overflow-hidden opacity-30 hover:opacity-75 transition-all transform hover:scale-105 cursor-pointer border border-neutral-300 flex-shrink-0"
+            className="hidden lg:block w-14 h-14 rounded-2xl overflow-hidden opacity-30 hover:opacity-75 transition-all transform hover:scale-105 cursor-pointer border border-neutral-300 dark:border-neutral-700 flex-shrink-0"
             title={testimonials[farRightIdx].name}
           >
             <img
@@ -240,14 +240,14 @@ export default function TestimonialsSection() {
         <div className="flex items-center justify-center gap-3 mt-8">
           <button
             onClick={handlePrev}
-            className="w-11 h-11 rounded-full bg-white hover:bg-neutral-50 border border-neutral-200 shadow-xs flex items-center justify-center text-neutral-700 hover:text-neutral-950 transition-all cursor-pointer hover:scale-105"
+            className="w-11 h-11 rounded-full bg-white dark:bg-[#161a22] hover:bg-neutral-50 dark:hover:bg-[#202531] border border-neutral-200 dark:border-neutral-700/80 shadow-xs flex items-center justify-center text-neutral-700 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white transition-all cursor-pointer hover:scale-105"
             aria-label="Previous Testimonial"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={handleNext}
-            className="w-11 h-11 rounded-full bg-white hover:bg-neutral-50 border border-neutral-200 shadow-xs flex items-center justify-center text-neutral-700 hover:text-neutral-950 transition-all cursor-pointer hover:scale-105"
+            className="w-11 h-11 rounded-full bg-white dark:bg-[#161a22] hover:bg-neutral-50 dark:hover:bg-[#202531] border border-neutral-200 dark:border-neutral-700/80 shadow-xs flex items-center justify-center text-neutral-700 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white transition-all cursor-pointer hover:scale-105"
             aria-label="Next Testimonial"
           >
             <ChevronRight className="w-4 h-4" />

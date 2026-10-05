@@ -83,21 +83,21 @@ export default function ServicesSection({ onOpenQuote, onOpenTracking }: Service
   ];
 
   return (
-    <section id="services" className="py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 bg-white border-y border-neutral-200">
+    <section id="services" className="py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 bg-white dark:bg-[#0c0e12] border-y border-neutral-200 dark:border-neutral-800/80 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* ================= SECTION HEADER (MOVEXA INSPIRED) ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
           <div className="lg:col-span-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100 text-neutral-700 text-xs font-medium mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100 dark:bg-[#161a22] text-neutral-700 dark:text-neutral-300 text-xs font-semibold mb-3 border border-neutral-200 dark:border-neutral-700/80 transition-colors">
               <span className="text-orange-500">✈</span>
               <span>Services & Support</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white tracking-tight leading-[1.15] transition-colors">
               FAST PRECISION CARGO
               <br />
               DELIVERY FOR EVERYONE
             </h2>
-            <p className="text-neutral-500 text-xs sm:text-sm mt-3 max-w-xl">
+            <p className="text-neutral-500 dark:text-neutral-400 text-xs sm:text-sm mt-3 max-w-xl transition-colors">
               Sri Ponniamman Trans provides complete container freight solutions from berth unloading to bonded CFS yard management and final inland factory haulage.
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function ServicesSection({ onOpenQuote, onOpenTracking }: Service
             </button>
             <button
               onClick={onOpenTracking}
-              className="px-6 py-3.5 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+              className="px-6 py-3.5 rounded-full bg-neutral-100 dark:bg-[#161a22] hover:bg-neutral-200 dark:hover:bg-[#202531] text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700/80 text-xs sm:text-sm font-semibold transition-all cursor-pointer"
             >
               Track Cargo
             </button>
@@ -207,8 +207,8 @@ export default function ServicesSection({ onOpenQuote, onOpenTracking }: Service
                 onClick={() => setActiveAccordion(item.id)}
                 className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border ${
                   isDarkActive
-                    ? "bg-[#111215] text-white border-neutral-800 shadow-xl"
-                    : "bg-[#f8f9fa] text-neutral-900 border-neutral-200 hover:border-neutral-300 shadow-sm"
+                    ? "bg-[#111215] dark:bg-[#161a22] text-white border-neutral-800 dark:border-neutral-700 shadow-xl"
+                    : "bg-[#f8f9fa] dark:bg-[#13161c] text-neutral-900 dark:text-white border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 shadow-sm"
                 }`}
               >
                 <div className="p-4 sm:p-5 md:p-6 flex items-start sm:items-center justify-between gap-4">
@@ -242,7 +242,7 @@ export default function ServicesSection({ onOpenQuote, onOpenTracking }: Service
                         </div>
                       </div>
                     ) : (
-                      <p className="mt-1 pl-7 sm:pl-8 text-xs text-neutral-500 hidden sm:block">
+                      <p className="mt-1 pl-7 sm:pl-8 text-xs text-neutral-500 dark:text-neutral-400 hidden sm:block">
                         {item.subtitle}
                       </p>
                     )}
@@ -253,7 +253,7 @@ export default function ServicesSection({ onOpenQuote, onOpenTracking }: Service
                       className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-transform ${
                         isDarkActive
                           ? "bg-white/10 text-white border border-white/20"
-                          : "bg-white text-orange-500 border border-neutral-200"
+                          : "bg-white dark:bg-[#1a1e27] text-orange-500 border border-neutral-200 dark:border-neutral-700"
                       }`}
                     >
                       {isDarkActive ? (

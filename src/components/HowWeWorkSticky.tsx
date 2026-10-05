@@ -130,20 +130,20 @@ export default function HowWeWorkSticky() {
     <section
       id="workflow"
       ref={containerRef}
-      className="relative py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
+      className="relative py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto transition-colors"
     >
       {/* Section Header */}
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-neutral-700 text-xs font-medium mb-3 shadow-xs border border-neutral-200">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white dark:bg-[#161a22] text-neutral-700 dark:text-neutral-300 text-xs font-semibold mb-3 shadow-xs border border-neutral-200 dark:border-neutral-700/80 transition-colors">
           <span className="text-orange-500">🚢</span>
           <span>How We Work</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-[#ff5c00] tracking-tight leading-tight transition-colors">
           Synchronized Port Logistics
           <br />
           From Order to Berth
         </h2>
-        <p className="text-neutral-500 text-xs sm:text-sm mt-3">
+        <p className="text-neutral-500 dark:text-black text-xs sm:text-sm mt-3 transition-colors">
           Scroll through our 5-phase operations pipeline. Experience how Sri Ponniamman Trans manages high-volume container movements with zero-demurrage precision.
         </p>
       </div>
@@ -232,24 +232,24 @@ export default function HowWeWorkSticky() {
                 onClick={() => handleStepClick(idx)}
                 className={`p-6 sm:p-8 rounded-[28px] transition-all duration-300 cursor-pointer border ${
                   isActive
-                    ? "bg-white text-neutral-900 border-orange-500 shadow-xl ring-2 ring-orange-500/20 transform scale-[1.02]"
-                    : "bg-white/80 text-neutral-700 border-neutral-200/90 hover:border-neutral-300 opacity-70 hover:opacity-100"
+                    ? "bg-white dark:bg-[#161a22] text-neutral-900 dark:text-white border-orange-500 shadow-xl ring-2 ring-orange-500/20 transform scale-[1.02]"
+                    : "bg-white/80 dark:bg-[#13161c]/80 text-neutral-700 dark:text-neutral-300 border-neutral-200/90 dark:border-neutral-800/80 hover:border-neutral-300 dark:hover:border-neutral-700 opacity-70 hover:opacity-100"
                 }`}
               >
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex items-center gap-3">
                     <span
                       className={`w-10 h-10 rounded-2xl flex items-center justify-center font-black text-sm transition-all ${
-                        isActive ? "bg-orange-500 text-white shadow-md shadow-orange-500/30" : "bg-neutral-100 text-neutral-700"
+                        isActive ? "bg-orange-500 text-white shadow-md shadow-orange-500/30" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
                       }`}
                     >
                       {s.stepNumber}
                     </span>
                     <div>
-                      <span className="text-[11px] uppercase font-bold text-orange-600 tracking-wider block">
+                      <span className="text-[11px] uppercase font-bold text-orange-600 dark:text-orange-400 tracking-wider block">
                         {s.tag}
                       </span>
-                      <h4 className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                      <h4 className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
                         {s.title}
                       </h4>
                     </div>
@@ -257,24 +257,24 @@ export default function HowWeWorkSticky() {
 
                   <span
                     className={`text-xs px-2.5 py-1 rounded-full font-semibold ${
-                      isActive ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "text-neutral-400"
+                      isActive ? "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60" : "text-neutral-400 dark:text-neutral-500"
                     }`}
                   >
                     {isActive ? "Active Phase" : `Step ${idx + 1}`}
                   </span>
                 </div>
 
-                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-5">
+                <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed mb-5">
                   {s.desc}
                 </p>
 
                 {/* Sub-features list */}
-                <div className="space-y-2 pt-2 border-t border-neutral-100">
+                <div className="space-y-2 pt-2 border-t border-neutral-100 dark:border-neutral-800">
                   {s.details.map((detail, dIdx) => (
-                    <div key={dIdx} className="flex items-center gap-2 text-xs text-neutral-700 font-medium">
+                    <div key={dIdx} className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 font-medium">
                       <CheckCircle2
                         className={`w-4 h-4 flex-shrink-0 ${
-                          isActive ? "text-orange-500" : "text-neutral-400"
+                          isActive ? "text-orange-500" : "text-neutral-400 dark:text-neutral-500"
                         }`}
                       />
                       <span>{detail}</span>
